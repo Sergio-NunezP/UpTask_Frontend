@@ -1,10 +1,11 @@
 import ProjectForm from '@/components/projects/ProjectForm'
 import { useForm } from 'react-hook-form'
 import { Link } from "react-router-dom"
+import { ProjectFormData } from 'types'
 
 export default function CreateProjectView() {
 
-    const initialValues = {
+    const initialValues: ProjectFormData = {
         projectName: "",
         clientName: "",
         description: ""
@@ -14,7 +15,7 @@ export default function CreateProjectView() {
     const { register, handleSubmit, formState: { errors } } = useForm({ defaultValues: initialValues })
 
     // handleForm es la funcion que se ejecuta al enviar el formulario
-    const handleForm = (data) => {
+    const handleForm = (data: ProjectFormData) => {
         console.log(data)
     }
 
