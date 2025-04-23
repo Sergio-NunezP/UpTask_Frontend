@@ -1,3 +1,4 @@
+import ProjectForm from '@/components/projects/ProjectForm'
 import { useForm } from 'react-hook-form'
 import { Link } from "react-router-dom"
 
@@ -33,6 +34,12 @@ export default function CreateProjectView() {
                 className="mt-10 bg-white shadow-lg rounded-lg p-10"
                 onSubmit={handleSubmit(handleForm)}
             >
+
+                <ProjectForm
+                    register={register}
+                    errors={errors}
+                />
+
                 <input type="submit"
                     value="Crear Proyecto"
                     className='bg-fuchsia-600 hover:bg-fuchsia-700 w-full p-3 text-white uppercase font-bold rounded cursor-pointer transition-colors'
