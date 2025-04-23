@@ -1,6 +1,22 @@
+import { useForm } from 'react-hook-form'
 import { Link } from "react-router-dom"
 
 export default function CreateProjectView() {
+
+    const initialValues = {
+        projectName: "",
+        clientName: "",
+        description: ""
+    }
+
+    // useForm es un hook que nos permite manejar el formulario de manera sencilla
+    const { register, handleSubmit, formState: { errors } } = useForm({ defaultValues: initialValues })
+
+    // handleForm es la funcion que se ejecuta al enviar el formulario
+    const handleForm = (data) => {
+        console.log(data)
+    }
+
     return (
         <>
             <h1 className="text-5xl font-black">Crear Proyecto</h1>
@@ -12,6 +28,16 @@ export default function CreateProjectView() {
                     to='/'
                 >Volver a Proyectos</Link>
             </nav>
+
+            <form
+                className="mt-10 bg-white shadow-lg rounded-lg p-10"
+                onSubmit={handleSubmit(handleForm)}
+            >
+                <input type="submit"
+                    value="Crear Proyecto"
+                    className='bg-fuchsia-600 hover:bg-fuchsia-700 w-full p-3 text-white uppercase font-bold rounded cursor-pointer transition-colors'
+                />
+            </form>
         </>
     )
 }
