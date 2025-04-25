@@ -21,6 +21,15 @@
       "@/layouts/*": [
         "layouts/*"
       ],
+      "@/types/*": [
+        "types/*"
+      ],
+      "@/lib/*": [
+        "lib/*"
+      ],
+      "@/api/*": [
+        "api/*"
+      ],
     },
     /* Bundler mode */
     "moduleResolution": "bundler",
